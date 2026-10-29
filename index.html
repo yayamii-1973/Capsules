@@ -59,6 +59,9 @@ section h2{margin:0 0 20px;font:700 clamp(28px,4vw,38px)/1.1 var(--display);lett
 .install ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px}
 .install li{padding-left:4px}
 .install .note{margin:22px 0 0;font-size:15px;color:var(--soft)}
+.safe p{margin:0 0 16px}
+.safe code{font:500 14px ui-monospace,"SF Mono",Menlo,monospace;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.safe .hash{display:block;margin:6px 0;padding:8px 10px;overflow-wrap:anywhere;user-select:all}
 kbd{font:500 .9em var(--body);padding:1px 6px;border-radius:5px;border:1px solid var(--line);background:var(--bg)}
 footer{text-align:center;font-size:14px;color:var(--soft);display:flex;flex-direction:column;gap:4px}
 @media (prefers-reduced-motion:no-preference){.pill{animation:bob 5s ease-in-out infinite}@keyframes bob{50%{transform:rotate(-5deg) translateY(-4px)}}}
@@ -128,6 +131,20 @@ footer{text-align:center;font-size:14px;color:var(--soft);display:flex;flex-dire
       <li>The pill waits on the right edge of your screen. Everything else is in the menu bar icon, including <b>Settings…</b> <kbd>⌘,</kbd></li>
     </ol>
     <p class="note">Capsules speaks English and Bulgarian and follows your Mac’s language. You can switch it in Settings → General.</p>
+  </section>
+
+  <section class="install safe" aria-labelledby="safe">
+    <h2 id="safe">Is it safe?</h2>
+    <p>Capsules is a free personal project. It isn’t sold through the App Store and isn’t signed with a paid Apple developer account, which is why macOS asks you to click <b>Open Anyway</b> the first time. Here is how you can check the download yourself:</p>
+    <ol>
+      <li><b>Make sure it’s the original file.</b> Open Terminal and run:<br>
+        <code>shasum -a 256 ~/Downloads/Capsules.dmg</code><br>
+        The result must match this SHA-256 fingerprint exactly:
+        <code class="hash">327181c4deada088e3b529a654232c03d6653b5bae2e90871bd4e5a5cfd3ef5e</code>
+        If even one character is different, don’t open the file.</li>
+      <li><b>Scan it.</b> Upload the file to <a href="https://www.virustotal.com" rel="noopener">virustotal.com</a>, where dozens of antivirus engines check it for free.</li>
+      <li><b>Know what it touches.</b> Speech is recognized on your Mac and never sent anywhere. The only download the app makes is its speech model, once. Your capsules stay on your Mac and in your own iCloud Drive. Access to the microphone, Calendar, Reminders and Contacts is asked for by macOS, and you can say no.</li>
+    </ol>
   </section>
 
   <footer>
